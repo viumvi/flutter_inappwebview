@@ -1429,13 +1429,13 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
         }
     }
 
-    public override func evaluateJavaScript(_ javaScriptString: String, completionHandler: (@MainActor @Sendable (Any?, (any Error)?) -> Void)? = nil) {
-        if let applePayAPIEnabled = settings?.applePayAPIEnabled, applePayAPIEnabled {
-            completionHandler?(nil, nil)
-            return
-        }
-        super.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
-    }
+    // public override func evaluateJavaScript(_ javaScriptString: String, completionHandler: (@MainActor @Sendable (Any?, (any Error)?) -> Void)? = nil) {
+    //     if let applePayAPIEnabled = settings?.applePayAPIEnabled, applePayAPIEnabled {
+    //         completionHandler?(nil, nil)
+    //         return
+    //     }
+    //     super.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
+    // }
     
     @available(iOS 14.0, *)
     public func evaluateJavaScript(_ javaScript: String, frame: WKFrameInfo? = nil, contentWorld: WKContentWorld, completionHandler: ((Result<Any, Error>) -> Void)? = nil) {
